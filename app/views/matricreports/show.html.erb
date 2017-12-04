@@ -1,0 +1,126 @@
+<html>
+  <head>
+ 
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Pass Rate', 'Failure rate'],
+          ['2014', <%= @matricreport.pass_rate %>, <%= @matricreport.failure_rate %>],
+          ['2015', <%= @matricreport.pass_rate2015 %>, <%= @matricreport.failure_rate2015 %>],
+          ['2016', <%= @matricreport.pass_rate2016 %>, <%= @matricreport.failure_rate2016 %>]
+         
+        ]);
+        var options = {
+          chart: {
+            bg: '000000',
+            title: '<%= @matricreport.school_name %>',
+            subtitle: 'Rates Retes',
+            align: "center"
+          },
+           vAxis: {
+          title: 'Percentage (%)',
+          minValue: 0,
+          maxValue: 100,
+          format:'#,##%'
+        },
+        hAxis: {
+          title: 'Year'
+        },
+          bars: 'vertical' // Required for Material Bar Charts.
+        };
+        var chart = new google.charts.Bar(document.getElementById('chartcontainer'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+       <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Number'],
+          ['2014',   <%= @matricreport.wrote_2014%>],
+          ['2014',      <%= @matricreport.passed_2014%>],
+          ['2015',  <%= @matricreport.wrote_2015%>],
+          ['2015', <%= @matricreport.passed_2015%>],
+          ['2016', <%= @matricreport.wrote_2016%>],
+          ['2016',    <%= @matricreport.passed_2016%>]
+        ]);
+        var options = {
+          title: '<%= @matricreport.school_name %>'
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('chart-container'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'pass average'],
+          ['2014',  <%= @matricreport.pass_rate %>],
+          ['2015',  <%= @matricreport.pass_rate2015 %>],
+          ['2016',  <%= @matricreport.pass_rate2016 %>]
+        ]);
+        var options = {
+          title: '<%= @matricreport.school_name %>',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('barchart_material'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  </head>
+  <body><div class="container">
+<button class="btn btn-premary btn-lg col-md-4 col-xs-4" id="btn1">Bar Average</button>
+<button class="btn btn-premary btn-lg col-md-4 col-xs-4 col-xs-4" id="btn2">Pie Failure Rate</button>
+<button class="btn btn-premary btn-lg col-md-4 col-xs-4 col-xs-4" id="btn3">Line Pass Rate</button>
+</div>
+
+<div class="container">
+<div>
+<div id="chartcontainer" style="width: 100%; height: 500px;"></div> 
+</div>
+
+<div id="chart-container" style="width: 100%; height: 500px;"></div> 
+
+<div>
+<div id="barchart_material" style="width: 100%; height: 500px;"></div> 
+</div>
+</div>
+
+ <script> 
+(function ($) {
+$('#btn1').click(function () {
+$('#chart-container').hide();
+$('#barchart_material').hide();
+ $('#chartcontainer').show();
+  
+ }); 
+ })(jQuery);
+ 
+ (function ($) {
+$('#btn2').click(function () {
+$('#chartcontainer').hide(); 
+$('#barchart_material').hide();
+ $('#chart-container').show(); 
+  });
+ })(jQuery);
+ 
+  (function ($) {
+$('#btn3').click(function () {
+$('#chartcontainer').hide(); 
+$('#chart-container').hide(); 
+ $('#barchart_material').show(); 
+  });
+ })(jQuery);
+ </script>
+  </body>
+</html>
+
+<%= link_to 'Edit', edit_matricreport_path(@matricreport) %> |
+<%= link_to 'Back', matricreports_path %>
