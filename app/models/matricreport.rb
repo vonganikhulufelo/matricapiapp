@@ -1,5 +1,5 @@
 class Matricreport < ApplicationRecord
-	validates :school_name, :centre_no, presence: true, uniqueness: true
+	#validates :school_name, :centre_no, presence: true, uniqueness: true
 	
 
 
