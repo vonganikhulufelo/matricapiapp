@@ -1,92 +1,63 @@
-<%= form_with(model: matricreport, local: true) do |form| %>
+<%= form_with(model: matricreport, local: true) do |form|%>
+<div class="form-group">
   <% if matricreport.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(matricreport.errors.count, "error") %> prohibited this matricreport from being saved:</h2>
+      <h2  class="alert alert-danger"><%= pluralize(matricreport.errors.count, "error") %> prohibited this matricreport from being saved:</h2>
 
       <ul>
       <% matricreport.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li  class="alert alert-danger"><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+</div>
+  <div class="form-group">
     <%= form.label :emis %>
-    <%= form.text_field :emis, id: :matricreport_emis %>
+    <%= form.text_field :emis, id: :matricreport_emis, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :centre_no %>
-    <%= form.text_field :centre_no, id: :matricreport_centre_no %>
+    <%= form.text_field :centre_no, id: :matricreport_centre_no, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :school_name %>
-    <%= form.text_field :school_name, id: :matricreport_school_name %>
+    <%= form.text_field :school_name, id: :matricreport_school_name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :wrote_2014 %>
-    <%= form.number_field :wrote_2014, id: :matricreport_wrote_2014 %>
+    <%= form.number_field :wrote_2014, id: :matricreport_wrote_2014, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :passed_2014 %>
-    <%= form.number_field :passed_2014, id: :matricreport_passed_2014 %>
+    <%= form.number_field :passed_2014, id: :matricreport_passed_2014, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :wrote_2015 %>
-    <%= form.number_field :wrote_2015, id: :matricreport_wrote_2015 %>
+    <%= form.number_field :wrote_2015, id: :matricreport_wrote_2015, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :passed_2015 %>
-    <%= form.number_field :passed_2015, id: :matricreport_passed_2015 %>
+    <%= form.number_field :passed_2015, id: :matricreport_passed_2015, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :wrote_2016 %>
-    <%= form.number_field :wrote_2016, id: :matricreport_wrote_2016 %>
+    <%= form.number_field :wrote_2016, id: :matricreport_wrote_2016, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :passed_2016 %>
-    <%= form.number_field :passed_2016, id: :matricreport_passed_2016 %>
+    <%= form.number_field :passed_2016, id: :matricreport_passed_2016, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :pass_rate %>
-    <%= form.text_field :pass_rate, id: :matricreport_pass_rate %>
-  </div>
-
-  <div class="field">
-    <%= form.label :failure_rate %>
-    <%= form.text_field :failure_rate, id: :matricreport_failure_rate %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pass_rate2015 %>
-    <%= form.text_field :pass_rate2015, id: :matricreport_pass_rate2015 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :failure_rate2015 %>
-    <%= form.text_field :failure_rate2015, id: :matricreport_failure_rate2015 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pass_rate2016 %>
-    <%= form.text_field :pass_rate2016, id: :matricreport_pass_rate2016 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :failure_rate2016 %>
-    <%= form.text_field :failure_rate2016, id: :matricreport_failure_rate2016 %>
-  </div>
-
-  <div class="actions">
+  <div class="btn">
     <%= form.submit %>
   </div>
 <% end %>

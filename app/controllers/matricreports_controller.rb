@@ -4,7 +4,7 @@ class MatricreportsController < ApplicationController
   # GET /matricreports
   # GET /matricreports.json
   def index
-    @matricreports = Matricreport.search(params[:search])
+    @matricreports = Matricreport.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /matricreports/1
@@ -68,7 +68,7 @@ class MatricreportsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def matricreport_params
+    def matricreport_params 
       params.permit(:emis, :centre_no, :school_name, :wrote_2014, :passed_2014, :wrote_2015, :passed_2015, :wrote_2016, :passed_2016, :pass_rate, :failure_rate, :pass_rate2015, :failure_rate2015, :pass_rate2016, :failure_rate2016)
     end
 end

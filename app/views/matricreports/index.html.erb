@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Matricreports</h1>
+<h1>Matric Yearly Report</h1>
 
 <table class = "table">
   <thead>
     <tr>
-      <th>Centre no</th>
-      <th>School name</th>
+      <th>Centre No</th>
+      <th>School Name</th>
       <th>Wrote 2014</th>
       <th>Passed 2014</th>
       <th>Wrote 2015</th>
@@ -28,7 +28,8 @@
         <td><%= matricreport.passed_2015 %></td>
         <td><%= matricreport.wrote_2016 %></td>
         <td><%= matricreport.passed_2016 %></td>
-        <td><%= link_to 'Show', matricreport %></td>
+        <td><%= link_to 'Add School', new_matricreport_path %></td>
+        <td><%= link_to 'View', matricreport %></td>
         <td><%= link_to 'Edit', edit_matricreport_path(matricreport) %></td>
         <td><%= link_to 'Destroy', matricreport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -37,4 +38,7 @@
 </table>
 <br>
 
-<%= link_to 'New Matricreport', new_matricreport_path %>
+
+
+<div class="row"><%= will_paginate @matricreports %></div>
+
