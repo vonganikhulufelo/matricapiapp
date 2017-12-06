@@ -17,10 +17,10 @@
         ]);
         var options = {
           chart: {
-            bg: 'blue',
             title: '<%= @matricreport.school_name %>',
-            subtitle: 'Averages',
-            align: "center"
+            subtitle: 'Rates',
+            align: "center",
+            
           },
            vAxis: {
           title: 'Percentage (%)',
@@ -31,7 +31,9 @@
         hAxis: {
           title: 'Year'
         },
-          bars: 'vertical' // Required for Material Bar Charts.
+          bars: 'vertical',
+          backgroundColor: 'rgb(50,150,255)'
+
         };
         var chart = new google.charts.Bar(document.getElementById('chartcontainer'));
         chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -45,9 +47,9 @@
 
       var data = google.visualization.arrayToDataTable([
         ['ID', 'Number wrote exam', 'Number pass exam'],
-        ['2014',    <%= @matricreport.wrote_2014 %>,              <%= @matricreport.passed_2014 %>],
-        ['2015',    <%= @matricreport.wrote_2015 %>,              <%= @matricreport.passed_2015 %>],
-        ['2016',    <%= @matricreport.wrote_2016 %>,               <%= @matricreport.passed_2016 %>]
+        ['2014',    <%= @matricreport.wrote_2014 %>, <%= @matricreport.passed_2014 %>],
+        ['2015',    <%= @matricreport.wrote_2015 %>, <%= @matricreport.passed_2015 %>],
+        ['2016',    <%= @matricreport.wrote_2016 %>, <%= @matricreport.passed_2016 %>]
        
       ]);
 
@@ -55,7 +57,8 @@
         title: '<%= @matricreport.school_name %>',
         hAxis: {title: 'Number wrote exam'},
         vAxis: {title: 'Number pass exam'},
-        bubble: {textStyle: {fontSize: 11}}
+        bubble: {textStyle: {fontSize: 11}},
+        backgroundColor: 'rgb(50,150,255)'
       };
 
       var chart = new google.visualization.BubbleChart(document.getElementById('chart-container'));
@@ -75,7 +78,8 @@
         var options = {
           title: '<%= @matricreport.school_name %>',
           curveType: 'function',
-          legend: { position: 'right' }
+          legend: { position: 'right' },
+          backgroundColor: 'rgb(50,150,255)'
         };
         var chart = new google.visualization.LineChart(document.getElementById('barchart_material'));
         chart.draw(data, options);
@@ -84,7 +88,7 @@
   </head>
   </head>
   <body><div class="container">
-<button class="btn btn-premary btn-lg col-md-4 col-xs-4" id="btn1">Averages</button>
+<button class="btn btn-premary btn-lg col-md-4 col-xs-4" id="btn1">Peformance Rates</button>
 <button class="btn btn-premary btn-lg col-md-4 col-xs-4 col-xs-4" id="btn2">School Records</button>
 <button class="btn btn-premary btn-lg col-md-4 col-xs-4 col-xs-4" id="btn3">Pass Rate</button>
 </div>
@@ -127,8 +131,10 @@ $('#chart-container').hide();
   });
  })(jQuery);
  </script>
+ <div class="pager"><%= link_to 'Edit', edit_matricreport_path(@matricreport),class: "link"  %> |
+<%= link_to 'Back', matricreports_path,class: "link"  %></div> 
   </body>
 </html>
 
-<%= link_to 'Edit', edit_matricreport_path(@matricreport) %> |
-<%= link_to 'Back', matricreports_path %>
+
+
