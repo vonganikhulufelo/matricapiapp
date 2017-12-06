@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1 class="pager">South African Matric Report</h1>
 
-<table class = "table">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Centre No</th>
@@ -18,7 +18,7 @@
 
   <tbody>
     <% @matricreports.each do |matricreport| %>
-      <tr>
+      <tr class="table-striped">
         <td><%= matricreport.centre_no %></td>
         <td><%= matricreport.school_name %></td>
         <td><%= matricreport.wrote_2014 %></td>
