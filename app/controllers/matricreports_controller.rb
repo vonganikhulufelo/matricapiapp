@@ -4,7 +4,7 @@ class MatricreportsController < ApplicationController
   # GET /matricreports
   # GET /matricreports.json
   def index
-    @matricreports = Matricreport.search(params[:search]).paginate(:page => params[:page], :per_page => 500)
+    @matricreports = Matricreport.search(params[:search]).paginate(:page => params[:page], :per_page => 500).order("school_name ASC")
   end
 
   # GET /matricreports/1

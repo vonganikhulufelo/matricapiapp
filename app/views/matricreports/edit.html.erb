@@ -1,11 +1,13 @@
 <h1 class="pager">Editing School</h1>
 
-<div class="row col-md-12">
+<div class="row">
 <div class="container">
 	<%= render 'form', matricreport: @matricreport%>
 </div>
 </div>
 
-<div class="container col-md-12"><%= link_to 'View', @matricreport,class: "link"  %> |
-<%= link_to 'Back', matricreports_path,class: "link"  %></div>
+<div class="pager"><%= link_to 'View', @matricreport,class: "link"  %> |
+<%= link_to 'Back', matricreports_path,class: "link"  %>
+	
+</div>
 
