@@ -27,12 +27,12 @@
           <%= submit_tag "Search" ,class: "btn btn-default"%>
         	<% end %>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Login</a></li>
+               <li> <%= link_to 'Add School', new_matricreport_path,class: "new" %></li>
             </ul>
         </div>
     </nav>
   </div>
-  <div class="well"><%= yield %></div>
+  <div class="container"><%= yield %></div>
     
   </body>
 </html>

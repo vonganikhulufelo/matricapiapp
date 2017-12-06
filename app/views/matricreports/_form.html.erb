@@ -13,51 +13,68 @@
   <% end %>
 </div>
   <div class="form-group">
-    <%= form.label :emis %>
+     <label class="col-sm-2 col-md-2 control-label">Emis No</label>
+     <div class="col-sm-10 col-md-10">
     <%= form.text_field :emis, id: :matricreport_emis, class: "form-control" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :centre_no %>
+  <div class="form-group">
+     <label class="col-sm-2 col-md-2 control-label">Centre No</label>
+     <div class="col-sm-10 col-md-10">
     <%= form.text_field :centre_no, id: :matricreport_centre_no, class: "form-control" %>
   </div>
+</div>
 
-  <div class="form-group">
-    <%= form.label :school_name %>
+<div class="form-group">
+  <label class="col-sm-2 col-md-2 control-label">School Name</label>
+     <div class="col-sm-10 col-md-10">
     <%= form.text_field :school_name, id: :matricreport_school_name, class: "form-control" %>
   </div>
+</div>
 
-  <div class="form-group">
-    <%= form.label :wrote_2014 %>
+<div class="form-group">
+  <label class="col-sm-2 col-md-2 control-label">Wrote 2014</label>
+     <div class="col-sm-10 col-md-10">
     <%= form.number_field :wrote_2014, id: :matricreport_wrote_2014, class: "form-control" %>
   </div>
-
-  <div class="form-group">
-    <%= form.label :passed_2014 %>
+</div>
+<div class="form-group">
+  <label class="col-sm-2 col-md-2 control-label">Passed 2014</label>
+     <div class="col-sm-10 col-md-10">
     <%= form.number_field :passed_2014, id: :matricreport_passed_2014, class: "form-control" %>
   </div>
+</div>
 
-  <div class="form-group">
-    <%= form.label :wrote_2015 %>
+<div class="form-group">
+  <label class="col-sm-2 col-md-2 control-label">Wrote 2015</label>
+     <div class="col-sm-10 col-md-10">
     <%= form.number_field :wrote_2015, id: :matricreport_wrote_2015, class: "form-control" %>
   </div>
+</div>
 
   <div class="form-group">
-    <%= form.label :passed_2015 %>
+    <label class="col-sm-2 col-md-2 control-label">Passed 2015</label>
+     <div class="col-sm-10 col-md-10">
     <%= form.number_field :passed_2015, id: :matricreport_passed_2015, class: "form-control" %>
   </div>
+</div>
 
   <div class="form-group">
-    <%= form.label :wrote_2016 %>
+     <label class="col-sm-2 col-md-2 control-label">Wrote 2016</label>
+     <div class="col-sm-10 col-md-10">
     <%= form.number_field :wrote_2016, id: :matricreport_wrote_2016, class: "form-control" %>
   </div>
-
-  <div class="form-group">
-    <%= form.label :passed_2016 %>
-    <%= form.number_field :passed_2016, id: :matricreport_passed_2016, class: "form-control" %>
   </div>
 
-  <div class="btn">
-    <%= form.submit %>
+  <div class="form-group">
+    <label class="col-sm-2 col-md-2 control-label">Passed 2016</label>
+     <div class="col-sm-10 col-md-10">
+    <%= form.number_field :passed_2016, id: :matricreport_passed_2016, class: "form-control" %>
+  </div>
+  </div>
+
+  <div class="btn btn-lg col-sm-8">
+    <%= form.submit "Submit School"%>
   </div>
 <% end %>

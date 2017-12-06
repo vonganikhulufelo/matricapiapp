@@ -1,0 +1,20 @@
+// Place all the styles related to the matricreports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+#chart-container, #barchart_material, #chartcontainer{
+width: 100%; 
+height: 600px;
+}
+
+.pager{
+	padding-right: 20%;
+	padding-left: 20%;
+}
+
+body, .table{
+	background-color: blue;
+	color: black;
+}
